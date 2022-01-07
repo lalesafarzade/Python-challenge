@@ -1,14 +1,18 @@
+#import the os module and csv Module for reading CSV files
 import os 
 import csv
 
+#function for analyzing the csv_file
 def data_analysis(csv_path):
     #csv_path=os.path.join("Resources",csv_file)
     with open(csv_path) as file:
         csv_reader=csv.reader(file,delimiter=",")
+        # Read the header row first
         csv_header = next(csv_reader)
         candidates_list=[]
         candidates_poll=[]
-    
+        
+        #looping through all rows
         for row in csv_reader:
             candidates_poll.append(row[2])
             if not row[2] in candidates_list:
@@ -22,7 +26,9 @@ def data_analysis(csv_path):
     return candidates_list,Total_Votes,candidates_percent,candidates_count,winner
 
 
+#function for writing the analysis result in txt_file
 def text_writer(csv_input,txt_output):
+    # Set path for file
     input_path=os.path.join("Resources",csv_input)
     output_path = os.path.join( "Analysis", txt_output)
     candidates_list,Total_Votes,candidates_percent,candidates_count,winner=data_analysis(input_path)
