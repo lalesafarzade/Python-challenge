@@ -32,6 +32,7 @@ def text_writer(csv_input,txt_output):
     input_path=os.path.join("Resources",csv_input)
     output_path = os.path.join( "Analysis", txt_output)
     candidates_list,Total_Votes,candidates_percent,candidates_count,winner=data_analysis(input_path)
+    #for writing in txt_file
     f= open(output_path,"w+")
     f.write("Election Results\n")
     f.write("-"*40+"\n")
@@ -44,5 +45,20 @@ def text_writer(csv_input,txt_output):
     f.write(f"Winner: {winner}\n")
     f.write("-"*40+"\n")
     f.close()
+
+    #for printing in terminal
+    print("-"*40+"\n")
+    print("Election Results\n")
+    print("-"*40+"\n")
+    print(f"Total Votes:{Total_Votes}\n")
+    print("-"*40+"\n")
+    for i in range(len(candidates_list)):
+        print(("{}" + ": "+ "{:.3%} " +"("+"{}"+")").format(candidates_list[i],candidates_percent[i],candidates_count[i]))
+        print("\n")
+    print("-"*40+"\n")
+    print(f"Winner: {winner}\n")
+    print("-"*40+"\n")
+   
+
 
 text_writer("election_data.csv","output.txt")
