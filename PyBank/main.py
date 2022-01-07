@@ -1,12 +1,16 @@
+#import the os module and csv Module for reading CSV files
 import os 
 import csv
+
+#function for analyzing the csv_file
 def data_analysis(csv_path):
     with open(csv_path) as csv_file:
         csv_reader=csv.reader(csv_file,delimiter=",")
+        # Read the header row first
         csv_header = next(csv_reader)
         profit_loss=[]
         Date_=[]
-    
+        #looping through all rows
         for row in csv_reader:
             profit_loss.append(row[1])
             Date_.append(row[0])
@@ -22,7 +26,11 @@ def data_analysis(csv_path):
     return Total_Months,Total,Average_Change,Greatest_Increase_amount,\
          Greatest_Increase_Date,Greatest_Decrease_amount,Greatest_Decrease_date   
 
+
+#function for writing the analysis result in txt_file
 def text_writer(csv_input,txt_output):
+    
+    # Set path for files
     input_path=os.path.join("Resources",csv_input)
     output_path = os.path.join( "Analysis", txt_output)
     Total_Months,Total,Average_Change,Greatest_Increase_amount,\
