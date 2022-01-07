@@ -4,7 +4,7 @@ PyBank and PyPoll challenge
 
 ## PyBank
 
-![Revenue](Images/revenue-per-lead.png)
+![Revenue](images/revenue-per-lead.png)
 
 * In this challenge,  a Python script for analyzing the financial records of a company. there is a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). The dataset is composed of two columns: `Date` and `Profit/Losses`. 
 
@@ -36,7 +36,7 @@ PyBank and PyPoll challenge
 
 ## PyPoll
 
-![Vote Counting](Images/Vote_counting.png)
+![Vote Counting](images/Vote_counting.png)
 
 * In this challenge, the task is helping a small, rural town modernize its vote counting process.
 
