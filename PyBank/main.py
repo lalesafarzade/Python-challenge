@@ -36,6 +36,7 @@ def text_writer(csv_input,txt_output):
     Total_Months,Total,Average_Change,Greatest_Increase_amount,\
     Greatest_Increase_Date,Greatest_Decrease_amount,Greatest_Decrease_date=\
     data_analysis(input_path)
+    #for writing in tct_file
     f= open(output_path,"w+")
     f.write("-"*60+"\n")
     f.write("Financial Analysis\n")
@@ -47,5 +48,20 @@ def text_writer(csv_input,txt_output):
     f.write(f"Greatest Decrease in Profits: {Greatest_Decrease_date} (${Greatest_Decrease_amount})\n")
     f.write("-"*60+"\n")
     f.close()
+
+    #for printing in terminal
+    print("-"*60+"\n")
+    print("Financial Analysis\n")
+    print("-"*60+"\n")
+    print(f"Total Months: {Total_Months}\n")
+    print(f"Total: ${Total}\n")
+    print(f"Average  Change: ${round(Average_Change,2)}\n")
+    print(f"Greatest Increase in Profits: {Greatest_Increase_Date} (${Greatest_Increase_amount})\n")
+    print(f"Greatest Decrease in Profits: {Greatest_Decrease_date} (${Greatest_Decrease_amount})\n")
+    print("-"*60+"\n")
+
+
+
+
 
 text_writer("budget_data.csv","output.txt")
